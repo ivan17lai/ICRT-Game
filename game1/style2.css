@@ -1,0 +1,33 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); /* 4x4 宮格 */
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    background-color: #cecece;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 10px;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.card.selected {
+    background-color: #ffe253; /* 選取時的顏色 */
+}
+
+.card.matched {
+    background-color: #57f17b; /* 配對成功後的顏色 */
+    color: white; /* 確保文字顏色保持可讀 */
+    cursor: default;
+    pointer-events: none; /* 禁用指針事件，防止再次點擊 */
+}
